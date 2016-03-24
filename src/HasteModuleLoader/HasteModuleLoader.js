@@ -469,7 +469,7 @@ class Loader {
     } else {
       moduleType = 'user';
       if (
-        constants.IS_PATH_BASED_MODULE_NAME.test(moduleName) ||
+        (constants.IS_PATH_BASED_MODULE_NAME.test(moduleName) && !this._resolveStubModuleName(moduleName)) ||
         (!this._getModule(moduleName) && !this._getMockModule(moduleName))
       ) {
         absolutePath = this._resolveModuleName(currPath, moduleName);

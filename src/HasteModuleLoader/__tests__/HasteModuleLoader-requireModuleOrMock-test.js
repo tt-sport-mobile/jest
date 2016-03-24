@@ -120,7 +120,7 @@ describe('HasteModuleLoader', function() {
         exports = loader.requireModuleOrMock(rootPath, 'cat.png');
         expect(exports.isRelativeImageStub).toBe(true);
 
-        exports = loader.requireModuleOrMock(rootPath, 'dog.png');
+        exports = loader.requireModuleOrMock(rootPath, '../assets/dog.png');
         expect(exports.isRelativeImageStub).toBe(true);
       });
     });
